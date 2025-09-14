@@ -1,0 +1,23 @@
+{
+  "editor.rulers": [125],
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "files.exclude": {
+    "**/.git": false
+  },
+
+  "tailwindCSS.experimental.classRegex": [
+    ["Classes \\=([^;]*);", "'([^']*)'"],
+    ["Classes \\=([^;]*);", "\"([^\"]*)\""],
+    ["Classes \\=([^;]*);", "\\`([^\\`]*)\\`"]
+  ],
+  "eslint.validate": ["json"],
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+}
