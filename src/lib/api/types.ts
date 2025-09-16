@@ -1,9 +1,11 @@
+export type Packaging = "pet" | "can" | "glass" | "tetra" | "other";
+
 export type Product = {
   id: number;
   companyId: number;
   registeredById: number;
   name: string;
-  packaging: 'pet' | 'can' | 'glass' | 'tetra' | 'other' | string;
+  packaging: Packaging;
   deposit: number;
   volume: number;
   registeredAt: string;
@@ -45,19 +47,29 @@ export type CompaniesResponse = {
   data: Company[];
   total: number;
 };
-export type UsersResponse = { success: true; data: User[]; total: number };
+
+export type UsersResponse =
+  | {
+      success: true;
+      data: User[];
+      total: number;
+    }
+  | {
+      success: false;
+      error: string;
+    };
 
 export type ProductsQuery = {
   page?: number;
   limit?: number;
   active?: boolean;
-  sort?: 'name' | 'registeredAt';
-  order?: 'asc' | 'desc';
+  sort?: "name" | "registeredAt";
+  order?: "asc" | "desc";
 };
 
 export type CreateProductBody = {
   name: string;
-  packaging: Product['packaging'];
+  packaging: Packaging;
   deposit: number;
   volume: number;
   companyId: number;
